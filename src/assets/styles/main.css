@@ -34,3 +34,162 @@
     background-color: #f2f3f5 !important;
     cursor: pointer;
 }
+
+
+.translate-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.translate-column1 {
+    text-align: center;
+}
+
+.translate-column2 {
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+    text-align: center;
+}
+.a {
+    max-width: 720px;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+}
+.google-logo2 {
+    width: 200px;
+}
+
+.form-select {
+    width: 130px !important;
+    margin-top: 10px;
+}
+
+.language-button {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.weather-class {
+    width: 50%;
+    
+}
+
+.translate-api {
+    background-color: white;
+    width: 50%;
+}
+
+.form-class {
+    height: 250px;
+    padding: 30px;
+}
+#city-id {
+    gap: 8px;
+    display: grid;
+    padding-top: 20px;
+    padding-bottom: 15px;
+}
+#name-id {
+    gap: 8px;
+    display: grid;
+}
+
+@media (max-width:768px) {
+    .weather-class {
+        width: 100%;
+    }
+    .translate-api {
+        width: 100%;
+        
+    }
+    .translate-column2 {
+        flex-direction: column;
+    }
+    .prayer-times {
+        display: table-cell;
+    }
+    .imdb-list {
+        display: table-cell !important;
+    }
+    #imdb-search-id {
+        width: 100% !important;
+    }
+}
+
+.prayer-t {
+    font-size: 16px;
+}
+
+.p-hour {
+    font-size: 22px;
+}
+
+.prayer-times {
+    margin-top: 70px;
+    margin-bottom: 70px;
+    background-color: var(--bs-secondary-bg);
+    padding: 20px;
+}
+
+.p-cnd {
+    display: grid;
+    gap: 5px;
+}
+
+.imdb-img {
+    width: 100px;
+    height: 148px;
+}
+
+.imdb-img:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+.imdb-li {
+    list-style-type: none;
+}
+
+.imdb-div1 {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.imdb-list {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    
+    border-radius: 0.25rem;
+}
+
+.imdb-div2-li > strong {
+    font-size: 16px;
+}
+
+.imdb-hr {
+    border-color: rgba(12, 12, 12, 0.473);
+}
+
+.imdb-search {
+    width: 200px !important;
+    margin-bottom: 15px;
+}
+
+.imdb-search-button {
+    width: 100px;
+    height: 35px;
+}
+
+#imdb-search-id {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 50px;
+}
