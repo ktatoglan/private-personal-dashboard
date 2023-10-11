@@ -1,43 +1,40 @@
-.search-image-container {
-  -webkit-mask-image: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 1) 40%,
-    transparent 95%
-  );
+.search-image-container{
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 40%, transparent 95%);
 }
-.google-logo {
+.google-logo{
   width: 30%;
 }
-.m-1r {
-  margin: 1rem !important;
+.m-1r{
+  margin: 1rem!important;
 }
-.search-button {
+.search-button{
   width: 200px;
 }
-.mt-15 {
-  margin-top: 15px !important;
+.mt-15{
+  margin-top: 15px!important;
 }
-.ml-15 {
-  margin-left: 15px !important;
+.ml-15{
+  margin-left: 15px!important;
 }
-.mr-15 {
-  margin-right: 15px !important;
+.mr-15{
+  margin-right: 15px!important;
 }
-.mb-15 {
-  margin-bottom: 15px !important;
+.mb-15{
+  margin-bottom: 15px!important;
 }
-.float-l {
+.float-l{
   float: left;
 }
-.news-img-container img {
+.news-img-container img{
   width: 100px;
   height: 100px;
   object-fit: cover;
 }
-.single-news:hover {
+.single-news:hover{
   background-color: #f2f3f5 !important;
   cursor: pointer;
 }
+
 
 .translate-row {
   display: flex;
@@ -51,17 +48,15 @@
 }
 
 .translate-column2 {
+  
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 30px;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
 }
-.a {
-  max-width: 720px;
-  border: var(--bs-border-width) solid var(--bs-border-color);
-}
+
 .google-logo2 {
   width: 200px;
 }
@@ -77,12 +72,11 @@
 }
 
 .weather-class {
-  width: 50%;
 }
 
 .translate-api {
   background-color: white;
-  width: 50%;
+  width: 100%;
 }
 
 .form-class {
@@ -100,30 +94,28 @@
   display: grid;
 }
 
-@media (max-width: 768px) {
+@media (max-width:768px) {
   .weather-class {
-    width: 100%;
+      width: 100%;
   }
   .translate-api {
-    width: 100%;
+      width: 100%;
+      
   }
   .translate-column2 {
-    flex-direction: column;
+      flex-direction: column;
   }
   .prayer-times {
-    display: table-cell;
+      display: table-cell;
   }
   .imdb-list {
-    display: table-cell !important;
+      display: table-cell !important;
   }
   #imdb-search-id {
-    width: 100% !important;
+      width: 100% !important;
   }
 }
 
-.prayer-t {
-  font-size: 16px;
-}
 
 .p-hour {
   font-size: 22px;
@@ -131,9 +123,6 @@
 
 .prayer-times {
   margin-top: 70px;
-  margin-bottom: 70px;
-  background-color: var(--bs-secondary-bg);
-  padding: 20px;
 }
 
 .p-cnd {
@@ -164,8 +153,8 @@
   padding: 15px;
   display: flex;
   flex-direction: column;
-
-  border-radius: 0.25rem;
+  
+  
 }
 
 .imdb-div2-li > strong {
@@ -178,7 +167,6 @@
 
 .imdb-search {
   width: 200px !important;
-  margin-bottom: 15px;
 }
 
 .imdb-search-button {
@@ -191,7 +179,17 @@
   flex-direction: row;
   gap: 10px;
   justify-content: center;
-  margin-top: 50px;
+}
+
+.imdb-card {
+  flex-direction: row !important;
+  display: flex !important;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  color: #72777a;
+  border: 0 !important;
 }
 
 /* Jobs List */
@@ -295,7 +293,6 @@
 }
 /* currency */
 .wrapper {
-  margin-top: 15px;
   box-sizing: border-box;
   padding: 30px;
   background: #fff;
@@ -308,7 +305,7 @@
   text-align: center;
 }
 .wrapper form {
-  margin: 40px 0 20px 0;
+  margin: 3px 0 20px 0;
 }
 form :where(input, select, button) {
   width: 100%;
@@ -416,4 +413,20 @@ form button:hover {
   bottom: -5px;
   left: 50%;
   transform: translate(-50%);
+}
+
+/* nöbetci eczane */
+.nöec {
+  text-align: center;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 260px;
+}
+#eczaneList {
+  display: none;
+}
+.ezlogo {
+  width: 100%;
 }
