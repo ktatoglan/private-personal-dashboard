@@ -7,6 +7,10 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
     <title>Blank</title>
     <style>
       #loader {
@@ -204,14 +208,27 @@
                     <form>
                       <div class="form-group" id="name-id">
                         <label for="name-id">Name</label>
-                        <input type="text" class="form-control" id="name-idd"  aria-describedby="emailHelp" placeholder="Name">
-                      </div>  
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="name-idd"
+                          aria-describedby="emailHelp"
+                          placeholder="Name"
+                        />
+                      </div>
                       <div class="form-group" id="city-id">
                         <label for="city-id">City</label>
-                        <input type="text" class="form-control" id="city-idd" placeholder="City">
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="city-idd"
+                          placeholder="City"
+                        />
                       </div>
-                      
-                      <button type="submit" class="btn btn-primary submitcity">Submit</button>
+
+                      <button type="submit" class="btn btn-primary submitcity">
+                        Submit
+                      </button>
                     </form>
                   </div>
                 </ul>
@@ -445,7 +462,7 @@
                         <div class="layer w-100">
                           <h3 class="lh-1">News</h3>
                         </div>
-                        <div class="layer w-100" >
+                        <div class="layer w-100">
                           <div class="layers" id="news-container">
                             <!-- <div class="layer w-100 mt-15 single-news">
                               <div class="news-img-container float-l mr-15">
@@ -463,28 +480,45 @@
               </div>
               <!-- News END-->
 
-               <!-- Google Translate -->
-              
-               <div class="translate-api">
+              <!-- Google Translate -->
+
+              <div class="translate-api">
                 <div class="translate-row">
                   <div class="translate-column1">
-                    <img src="https://www.freepnglogos.com/uploads/translate-logo-png/google-translate-logo-emblem-symbol-services-application-12.png" class="google-logo2" alt="">
-                    
+                    <img
+                      src="https://www.freepnglogos.com/uploads/translate-logo-png/google-translate-logo-emblem-symbol-services-application-12.png"
+                      class="google-logo2"
+                      alt=""
+                    />
                   </div>
-                  
+
                   <div class="a">
                     <div class="translate-column2">
                       <form>
                         <div class="formfield">
-                          
-                          <textarea class="form-control" id="originalText" rows="10" cols="60"></textarea>
+                          <textarea
+                            class="form-control"
+                            id="originalText"
+                            rows="10"
+                            cols="60"
+                          ></textarea>
                         </div>
                       </form>
                       <div class="formfield">
-                        
-                        <textarea class="form-control" id="translatedText" rows="10" cols="60" readonly disabled placeholder="Translation"></textarea>
+                        <textarea
+                          class="form-control"
+                          id="translatedText"
+                          rows="10"
+                          cols="60"
+                          readonly
+                          disabled
+                          placeholder="Translation"
+                        ></textarea>
                         <div class="language-list">
-                        <select class="form-select" aria-label="Disabled select example">
+                          <select
+                            class="form-select"
+                            aria-label="Disabled select example"
+                          >
                             <option selected value="en">English</option>
                             <option value="af">Afrikaans</option>
                             <option value="sq">Albanian</option>
@@ -596,194 +630,326 @@
                             <option value="zu">Zulu</option>
                           </select>
                         </div>
-                        
                       </div>
-                      
                     </div>
                     <div class="language-button">
-                      <button type="button" id="translate-button" class="btn cur-p btn-outline-secondary">Translate</button>
+                      <button
+                        type="button"
+                        id="translate-button"
+                        class="btn cur-p btn-outline-secondary"
+                      >
+                        Translate
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
-              
+
               <!-- Weather -->
               <div class="weather-class">
-              <div class="bd bgc-white p-20">
-                <div class="layers">
-                  <!-- Widget Title -->
-                  <div class="layer w-100 mB-20">
-                    <h6 class="lh-1"><span class="weather-city">Weather</span></h6>
-                  </div>
-      
-                  <!-- Today Weather -->
-                  <div class="layer w-100">
-                    <div class="peers ai-c jc-sb fxw-nw">
-                      <div class="peer peer-greed">
-                        <div class="layers">
-                          <!-- Temprature -->
-                          <div class="layer w-100">
-                            <div class="peers fxw-nw ai-c">
-                              <div class="peer mR-20">
-                                <h3><span class="weather-temp">32</span><sup>°C</sup></h3>
-                              </div>
-                              <div class="peer11">
+                <div class="bd bgc-white p-20">
+                  <div class="layers">
+                    <!-- Widget Title -->
+                    <div class="layer w-100 mB-20">
+                      <h6 class="lh-1">
+                        <span class="weather-city">Weather</span>
+                      </h6>
+                    </div>
+
+                    <!-- Today Weather -->
+                    <div class="layer w-100">
+                      <div class="peers ai-c jc-sb fxw-nw">
+                        <div class="peer peer-greed">
+                          <div class="layers">
+                            <!-- Temprature -->
+                            <div class="layer w-100">
+                              <div class="peers fxw-nw ai-c">
+                                <div class="peer mR-20">
+                                  <h3>
+                                    <span class="weather-temp">32</span
+                                    ><sup>°C</sup>
+                                  </h3>
+                                </div>
+                                <div class="peer11"></div>
                               </div>
                             </div>
-                          </div>
-      
-                          <!-- Condition -->
-                          <div class="layer w-100">
-                            <span class="fw-600 c-grey-600"><span class="weather-status">Partly Clouds</span></span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="peer">
-                        <div class="layers ai-fe">
-                          <div class="layer">
-                            <h5 class="mB-5"><span class="weather-day">Monday</span></h5>
-                          </div>
-                          <div class="layer">
-                            <span class="fw-600 c-grey-600"><span class="weather-date">Nov, 01 2017</span></span>
+
+                            <!-- Condition -->
+                            <div class="layer w-100">
+                              <span class="fw-600 c-grey-600"
+                                ><span class="weather-status"
+                                  >Partly Clouds</span
+                                ></span
+                              >
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                  </div>
-      
-                  <!-- Today Weather Extended -->
-                  <div class="layer w-100 mY-30">
-                    <div class="layers bdB">
-                      <div class="layer w-100 bdT pY-5">
-                        <div class="peers ai-c jc-sb fxw-nw">
-                          <div class="peer">
-                            <span>Humidity</span>
-                          </div>
-                          <div class="peer ta-r">
-                            <span class="fw-600 c-grey-800"><span class="weather-humidity">10km/h</span></span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="layer w-100 bdT pY-5">
-                        <div class="peers ai-c jc-sb fxw-nw">
-                          <div class="peer">
-                            <span>Night</span>
-                          </div>
-                          <div class="peer ta-r">
-                            <span class="fw-600 c-grey-800"><span class="weather-night">05:00 AM</span><sup>°C</sup></span>
+                        <div class="peer">
+                          <div class="layers ai-fe">
+                            <div class="layer">
+                              <h5 class="mB-5">
+                                <span class="weather-day">Monday</span>
+                              </h5>
+                            </div>
+                            <div class="layer">
+                              <span class="fw-600 c-grey-600"
+                                ><span class="weather-date"
+                                  >Nov, 01 2017</span
+                                ></span
+                              >
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-      
-                  <!-- Week Forecast -->
-                  <div class="layer w-100">
-                    <div class="peers peers-greed ai-fs ta-c">
-                      <div class="peer peer1">
-                        <h6 class="mB-10">MON</h6>
-                        
-                        <span class="d-b fw-600"><span class="weather-mon">32</span><sup>°C</sup></span>
+
+                    <!-- Today Weather Extended -->
+                    <div class="layer w-100 mY-30">
+                      <div class="layers bdB">
+                        <div class="layer w-100 bdT pY-5">
+                          <div class="peers ai-c jc-sb fxw-nw">
+                            <div class="peer">
+                              <span>Humidity</span>
+                            </div>
+                            <div class="peer ta-r">
+                              <span class="fw-600 c-grey-800"
+                                ><span class="weather-humidity"
+                                  >10km/h</span
+                                ></span
+                              >
+                            </div>
+                          </div>
+                        </div>
+                        <div class="layer w-100 bdT pY-5">
+                          <div class="peers ai-c jc-sb fxw-nw">
+                            <div class="peer">
+                              <span>Night</span>
+                            </div>
+                            <div class="peer ta-r">
+                              <span class="fw-600 c-grey-800"
+                                ><span class="weather-night">05:00 AM</span
+                                ><sup>°C</sup></span
+                              >
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      <div class="peer peer2">
-                        <h6 class="mB-10">TUE</h6>
-                        
-                        <span class="d-b fw-600"><span class="weather-tue">32</span><sup>°C</sup></span>
-                      </div>
-                      <div class="peer peer3">
-                        <h6 class="mB-10">WED</h6>
-                        
-                        <span class="d-b fw-600"><span class="weather-wed">32</span><sup>°C</sup></span>
-                      </div>
-                      <div class="peer peer4">
-                        <h6 class="mB-10">THR</h6>
-                        
-                        <span class="d-b fw-600"><span class="weather-thr">32</span><sup>°C</sup></span>
-                      </div>
-                      <div class="peer peer5">
-                        <h6 class="mB-10">FRI</h6>
-                        
-                        <span class="d-b fw-600"><span class="weather-fri">32</span><sup>°C</sup></span>
-                      </div>
-                      <div class="peer peer6">
-                        <h6 class="mB-10">SAT</h6>
-                        
-                        <span class="d-b fw-600"><span class="weather-sat">32</span><sup>°C</sup></span>
-                      </div>
-                      <div class="peer peer7">
-                        <h6 class="mB-10">SUN</h6>
-                        
-                        <span class="d-b fw-600"><span class="weather-sun">32</span><sup>°C</sup></span>
+                    </div>
+
+                    <!-- Week Forecast -->
+                    <div class="layer w-100">
+                      <div class="peers peers-greed ai-fs ta-c">
+                        <div class="peer peer1">
+                          <h6 class="mB-10">MON</h6>
+
+                          <span class="d-b fw-600"
+                            ><span class="weather-mon">32</span
+                            ><sup>°C</sup></span
+                          >
+                        </div>
+                        <div class="peer peer2">
+                          <h6 class="mB-10">TUE</h6>
+
+                          <span class="d-b fw-600"
+                            ><span class="weather-tue">32</span
+                            ><sup>°C</sup></span
+                          >
+                        </div>
+                        <div class="peer peer3">
+                          <h6 class="mB-10">WED</h6>
+
+                          <span class="d-b fw-600"
+                            ><span class="weather-wed">32</span
+                            ><sup>°C</sup></span
+                          >
+                        </div>
+                        <div class="peer peer4">
+                          <h6 class="mB-10">THR</h6>
+
+                          <span class="d-b fw-600"
+                            ><span class="weather-thr">32</span
+                            ><sup>°C</sup></span
+                          >
+                        </div>
+                        <div class="peer peer5">
+                          <h6 class="mB-10">FRI</h6>
+
+                          <span class="d-b fw-600"
+                            ><span class="weather-fri">32</span
+                            ><sup>°C</sup></span
+                          >
+                        </div>
+                        <div class="peer peer6">
+                          <h6 class="mB-10">SAT</h6>
+
+                          <span class="d-b fw-600"
+                            ><span class="weather-sat">32</span
+                            ><sup>°C</sup></span
+                          >
+                        </div>
+                        <div class="peer peer7">
+                          <h6 class="mB-10">SUN</h6>
+
+                          <span class="d-b fw-600"
+                            ><span class="weather-sun">32</span
+                            ><sup>°C</sup></span
+                          >
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
               <!-- Prayer Times -->
-            <div class="prayer-times">
-              <div class="layer w-100">
-                <div class="peers peers-greed ai-fs ta-c">
-                  <div class="layer w-100 mB-20 prayer-container">
-                    <div class="layer w-100 mB-20 p-cnd">
-                      <h6 class="lh-1"><span class="prayer-city prayer-t"></span></h6>
-                      <span class="prayer-date"></span>
-                      <span>Sonraki namaz: <span class="prayer-countdown"></span></span>
-                      
+              <div class="prayer-times">
+                <div class="layer w-100">
+                  <div class="peers peers-greed ai-fs ta-c">
+                    <div class="layer w-100 mB-20 prayer-container">
+                      <div class="layer w-100 mB-20 p-cnd">
+                        <h6 class="lh-1">
+                          <span class="prayer-city prayer-t"></span>
+                        </h6>
+                        <span class="prayer-date"></span>
+                        <span
+                          >Sonraki namaz: <span class="prayer-countdown"></span
+                        ></span>
+                      </div>
+
+                      <span class="p-hour"></span>
                     </div>
-                    
-                    <span class="p-hour"></span>
-                    
-                  </div>
-                  <div class="peer peer1">
-                    <img src="assets/images/imsak.svg" width="55" height="55">
-                    <h6 class="mB-10 prayer-t">İMSAK</h6>
-                    
-                    <span class="d-b fw-600 prayer-t"><span class="imsak"></span></span>
-                  </div>
-                  <div class="peer peer2">
-                    <img src="assets/images/sabah.svg" width="55" height="55">
-                    <h6 class="mB-10 prayer-t">SABAH</h6>
-                    
-                    <span class="d-b fw-600 prayer-t"><span class="sabah"></span></span>
-                  </div>
-                  <div class="peer peer3">
-                    <img src="assets/images/ögle.svg" width="55" height="55">
-                    <h6 class="mB-10 prayer-t">ÖĞLE</h6>
-                    
-                    <span class="d-b fw-600 prayer-t"><span class="ogle"></span></span>
-                  </div>
-                  <div class="peer peer4">
-                    <img src="assets/images/ikindi.svg" width="55" height="55">
-                    <h6 class="mB-10 prayer-t">İKİNDİ</h6>
-                    
-                    <span class="d-b fw-600 prayer-t"><span class="ikindi"></span></span>
-                  </div>
-                  <div class="peer peer5">
-                    <img src="assets/images/aksam.svg" width="55" height="55">
-                    <h6 class="mB-10 prayer-t">AKŞAM</h6>
-                    
-                    <span class="d-b fw-600 prayer-t"><span class="aksam"></span></span>
-                  </div>
-                  <div class="peer peer7">
-                    <img src="assets/images/yatsi.svg" width="55" height="55">
-                    <h6 class="mB-10 prayer-t">YATSI</h6>
-                    
-                    <span class="d-b fw-600 prayer-t"><span class="yatsi"></span></span>
-                    
+                    <div class="peer peer1">
+                      <img
+                        src="assets/images/imsak.svg"
+                        width="55"
+                        height="55"
+                      />
+                      <h6 class="mB-10 prayer-t">İMSAK</h6>
+
+                      <span class="d-b fw-600 prayer-t"
+                        ><span class="imsak"></span
+                      ></span>
+                    </div>
+                    <div class="peer peer2">
+                      <img
+                        src="assets/images/sabah.svg"
+                        width="55"
+                        height="55"
+                      />
+                      <h6 class="mB-10 prayer-t">SABAH</h6>
+
+                      <span class="d-b fw-600 prayer-t"
+                        ><span class="sabah"></span
+                      ></span>
+                    </div>
+                    <div class="peer peer3">
+                      <img
+                        src="assets/images/ögle.svg"
+                        width="55"
+                        height="55"
+                      />
+                      <h6 class="mB-10 prayer-t">ÖĞLE</h6>
+
+                      <span class="d-b fw-600 prayer-t"
+                        ><span class="ogle"></span
+                      ></span>
+                    </div>
+                    <div class="peer peer4">
+                      <img
+                        src="assets/images/ikindi.svg"
+                        width="55"
+                        height="55"
+                      />
+                      <h6 class="mB-10 prayer-t">İKİNDİ</h6>
+
+                      <span class="d-b fw-600 prayer-t"
+                        ><span class="ikindi"></span
+                      ></span>
+                    </div>
+                    <div class="peer peer5">
+                      <img
+                        src="assets/images/aksam.svg"
+                        width="55"
+                        height="55"
+                      />
+                      <h6 class="mB-10 prayer-t">AKŞAM</h6>
+
+                      <span class="d-b fw-600 prayer-t"
+                        ><span class="aksam"></span
+                      ></span>
+                    </div>
+                    <div class="peer peer7">
+                      <img
+                        src="assets/images/yatsi.svg"
+                        width="55"
+                        height="55"
+                      />
+                      <h6 class="mB-10 prayer-t">YATSI</h6>
+
+                      <span class="d-b fw-600 prayer-t"
+                        ><span class="yatsi"></span
+                      ></span>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <!-- IMDB -->
-            <div class="imdb-container">
-              <div id="imdb-search-id">
-                <input type="text" class="form-control imdb-search" placeholder="Movie or TV-Series" required="">
-                <button type="button" class="btn cur-p btn-warning imdb-search-button">Search</button>
+              <!-- IMDB -->
+              <div class="imdb-container">
+                <div id="imdb-search-id">
+                  <input
+                    type="text"
+                    class="form-control imdb-search"
+                    placeholder="Movie or TV-Series"
+                    required=""
+                  />
+                  <button
+                    type="button"
+                    class="btn cur-p btn-warning imdb-search-button"
+                  >
+                    Search
+                  </button>
+                </div>
+                <div class="imdb-list"></div>
               </div>
-              <div class="imdb-list">
-                
+              <!-- Currency -->
+            <div class="row">
+              <div class="mansonary-item col-6 p-20">
+              <div class="wrapper ">
+                <header>Currency Converter</header>
+                <form action="#" class="currency_form">
+                  <div class="amount">
+                    <p>Enter Amount</p>
+                    <input type="text" value="1" />
+                  </div>
+                  <div class="drop-list">
+                    <div class="from">
+                      <p>From</p>
+                      <div class="select-box">
+                        <img
+                          src="https://flagcdn.com/48x36/us.png"
+                          alt="flag"
+                        />
+                        <select></select>
+                      </div>
+                    </div>
+                    <div class="icon"><i class="fas fa-exchange-alt"></i></div>
+                    <div class="to">
+                      <p>To</p>
+                      <div class="select-box">
+                        <img
+                          src="https://flagcdn.com/48x36/np.png"
+                          alt="flag"
+                        />
+                        <select></select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="exchange-rate">Getting exchange rate...</div>
+                  <button class="curencyBtn">Get Exchange Rate</button>
+                </form>
               </div>
             </div>
+          </div>
+              <!-- Currency End -->
             </div>
           </div>
         </main>
