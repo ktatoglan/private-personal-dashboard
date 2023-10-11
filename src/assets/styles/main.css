@@ -417,3 +417,21 @@ form button:hover {
   left: 50%;
   transform: translate(-50%);
 }
+/* nöbetci eczane */
+.nöec {
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+#eczaneList {
+  display: none;
+}
+.ezlogo {
+  width: 100%;
+}
+#spinner-nö {
+  justify-content: center;
+  align-items: center;
+  margin-left: 30%;
+  margin-top: 10%;
+  margin-bottom: 30%;
+}

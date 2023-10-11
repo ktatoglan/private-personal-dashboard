@@ -796,3 +796,82 @@ function getExchangeRate() {
       exchangeRateTxt.innerText = "Something went wrong";
     });
 }
+
+// nöbetci eczane
+function disa() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(onSuccess, onError);
+  }
+  function onError(err) {
+    console.log(err);
+  }
+  async function onSuccess(position) {
+    let lat = position.coords.latitude;
+    let lng = position.coords.longitude;
+    const apikey = keys.location_key;
+    const url = `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lng}&key=${apikey}`;
+
+    const response = await fetch(url);
+    const data = await response.json();
+
+    const cty = data.results[0].components.county;
+
+    var city = cty.split(" ")[0];
+    var ilce = cty.split(" ")[1];
+
+    function template() {
+      fetch(
+        `https://api.collectapi.com/health/dutyPharmacy?ilce=${ilce}&il=${city}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: keys.colletcapi_key_a,
+          },
+        }
+      )
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Hata: " + response.status);
+          }
+
+          return response.json();
+        })
+        .then((data) => {
+          const tbodyx = document.querySelector("#nöecz");
+
+          const createCountryCards = () => {
+            tbodyx.innerHTML = "";
+
+            for (let i = 0; i < data.result.length; i++) {
+              let country = document.createElement("h5");
+              country.className = "card-title";
+              country.innerHTML = data.result[i].name;
+
+              let unit = document.createElement("p");
+              unit.className = "card-text";
+              unit.innerHTML = data.result[i].address;
+
+              tbodyx.appendChild(country);
+              tbodyx.appendChild(unit);
+            }
+          };
+
+          createCountryCards();
+
+          document.querySelector(".ezlogo").style.display = "none";
+          document.querySelector("#spinner-nö").style.display = "inline-block";
+          setTimeout(() => {
+            document.querySelector("#spinner-nö").style.display = "none";
+            document.querySelector("#eczaneList").style.display =
+              "inline-block";
+          }, 2000);
+        })
+        .catch((error) => {
+          console.log("Hata oluştu:", error);
+        });
+    }
+
+    template();
+  }
+}
