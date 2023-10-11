@@ -1,74 +1,72 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-    <title>Blank</title>
-    <style>
-      #loader {
-        transition: all 0.3s ease-in-out;
-        opacity: 1;
-        visibility: visible;
-        position: fixed;
-        height: 100vh;
-        width: 100%;
-        background: #fff;
-        z-index: 90000;
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <title>Blank</title>
+  <style>
+    #loader {
+      transition: all 0.3s ease-in-out;
+      opacity: 1;
+      visibility: visible;
+      position: fixed;
+      height: 100vh;
+      width: 100%;
+      background: #fff;
+      z-index: 90000;
+    }
+
+    #loader.fadeOut {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .spinner {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: calc(50% - 20px);
+      left: calc(50% - 20px);
+      background-color: #333;
+      border-radius: 100%;
+      -webkit-animation: sk-scaleout 1s infinite ease-in-out;
+      animation: sk-scaleout 1s infinite ease-in-out;
+    }
+
+    @-webkit-keyframes sk-scaleout {
+      0% {
+        -webkit-transform: scale(0);
       }
 
-      #loader.fadeOut {
+      100% {
+        -webkit-transform: scale(1);
         opacity: 0;
-        visibility: hidden;
+      }
+    }
+
+    @keyframes sk-scaleout {
+      0% {
+        -webkit-transform: scale(0);
+        transform: scale(0);
       }
 
-      .spinner {
-        width: 40px;
-        height: 40px;
-        position: absolute;
-        top: calc(50% - 20px);
-        left: calc(50% - 20px);
-        background-color: #333;
-        border-radius: 100%;
-        -webkit-animation: sk-scaleout 1s infinite ease-in-out;
-        animation: sk-scaleout 1s infinite ease-in-out;
+      100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 0;
       }
+    }
+  </style>
+  <link rel="stylesheet" href="/assets/styles/main.css" />
+</head>
 
-      @-webkit-keyframes sk-scaleout {
-        0% {
-          -webkit-transform: scale(0);
-        }
-        100% {
-          -webkit-transform: scale(1);
-          opacity: 0;
-        }
-      }
-
-      @keyframes sk-scaleout {
-        0% {
-          -webkit-transform: scale(0);
-          transform: scale(0);
-        }
-        100% {
-          -webkit-transform: scale(1);
-          transform: scale(1);
-          opacity: 0;
-        }
-      }
-    </style>
-    <link rel="stylesheet" href="/assets/styles/main.css" />
-  </head>
-  <body class="app">
-    <!-- @TOC -->
-    <!-- =================================================== -->
-    <!--
+<body class="app">
+  <!-- @TOC -->
+  <!-- =================================================== -->
+  <!--
       + @Page Loader
       + @App Content
           - #Left Sidebar
@@ -80,388 +78,296 @@
               > $App Screen Content
     -->
 
-    <!-- @Page Loader -->
-    <!-- =================================================== -->
-    <div id="loader">
-      <div class="spinner"></div>
-    </div>
+  <!-- @Page Loader -->
+  <!-- =================================================== -->
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
 
-    <script>
-      window.addEventListener("load", function load() {
-        const loader = document.getElementById("loader");
-        setTimeout(function () {
-          loader.classList.add("fadeOut");
-        }, 300);
-      });
-    </script>
+  <script>
+    window.addEventListener("load", function load() {
+      const loader = document.getElementById("loader");
+      setTimeout(function () {
+        loader.classList.add("fadeOut");
+      }, 300);
+    });
+  </script>
 
-    <!-- @App Content -->
-    <!-- =================================================== -->
-    <div>
-      <!-- #Left Sidebar ==================== -->
-      <div class="sidebar">
-        <div class="sidebar-inner">
-          <!-- ### $Sidebar Header ### -->
-          <div class="sidebar-logo">
-            <div class="peers ai-c fxw-nw">
-              <div class="peer peer-greed">
-                <a class="sidebar-link td-n" href="index.html">
-                  <div class="peers ai-c fxw-nw">
-                    <div class="peer">
-                      <div class="logo">
-                        <img src="assets/static/images/logo.png" alt="" />
-                      </div>
-                    </div>
-                    <div class="peer peer-greed">
-                      <h5 class="lh-1 mB-0 logo-text">Adminator</h5>
+  <!-- @App Content -->
+  <!-- =================================================== -->
+  <div>
+    <!-- #Left Sidebar ==================== -->
+    <div class="sidebar">
+      <div class="sidebar-inner">
+        <!-- ### $Sidebar Header ### -->
+        <div class="sidebar-logo">
+          <div class="peers ai-c fxw-nw">
+            <div class="peer peer-greed">
+              <a class="sidebar-link td-n" href="index.html">
+                <div class="peers ai-c fxw-nw">
+                  <div class="peer">
+                    <div class="logo">
+                      <img src="assets/static/images/logo.png" alt="" />
                     </div>
                   </div>
-                </a>
-              </div>
-              <div class="peer">
-                <div class="mobile-toggle sidebar-toggle">
-                  <a href="" class="td-n">
-                    <i class="ti-arrow-circle-left"></i>
-                  </a>
+                  <div class="peer peer-greed">
+                    <h5 class="lh-1 mB-0 logo-text">Adminator</h5>
+                  </div>
                 </div>
+              </a>
+            </div>
+            <div class="peer">
+              <div class="mobile-toggle sidebar-toggle">
+                <a href="" class="td-n">
+                  <i class="ti-arrow-circle-left"></i>
+                </a>
               </div>
             </div>
           </div>
+        </div>
 
-          <!-- ### $Sidebar Menu ### -->
-          <ul class="sidebar-menu scrollable pos-r">
-            <li class="nav-item mT-30 actived">
-              <a class="sidebar-link" href="index.html">
-                <span class="icon-holder">
-                  <i class="c-blue-500 ti-home"></i>
-                </span>
-                <span class="title">Dashboard</span>
+        <!-- ### $Sidebar Menu ### -->
+        <ul class="sidebar-menu scrollable pos-r">
+          <li class="nav-item mT-30 actived">
+            <a class="sidebar-link" href="index.html">
+              <span class="icon-holder">
+                <i class="c-blue-500 ti-home"></i>
+              </span>
+              <span class="title">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="sidebar-link" href="compose.html">
+              <span class="icon-holder">
+                <img class="icon-jobs" style="width: 17px; height: 16px" src="images/project-manager.svg" alt="" />
+              </span>
+              <span class="title">JOB LİST</span>
+            </a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="sidebar-link" href="datatable.html">
+              <span class="icon-holder">
+                <i class="c-pink-500 ti-palette"></i>
+              </span>
+              <span class="title">UI Elements</span>
+            </a>
+          </li>
+
+        </ul>
+        </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- #Main ============================ -->
+    <div class="page-container">
+      <!-- ### $Topbar ### -->
+      <div class="header navbar">
+        <div class="header-container">
+          <ul class="nav-left">
+            <li>
+              <a id="sidebar-toggle" class="sidebar-toggle" href="javascript:void(0);">
+                <i class="ti-menu"></i>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="sidebar-link" href="compose.html">
-                <span class="icon-holder">
-                  <img
-                    class="icon-jobs"
-                    style="width: 17px; height: 16px"
-                    src="images/project-manager.svg"
-                    alt=""
-                  />
-                </span>
-                <span class="title">JOB LİST</span>
+            <li class="search-box">
+              <a class="search-toggle no-pdd-right" href="javascript:void(0);">
+                <i class="search-icon ti-search pdd-right-10"></i>
+                <i class="search-icon-close ti-close pdd-right-10"></i>
               </a>
             </li>
-            <li class="nav-item dropdown">
-              <a class="sidebar-link" href="datatable.html">
-                <span class="icon-holder">
-                  <i class="c-pink-500 ti-palette"></i>
-                </span>
-                <span class="title">UI Elements</span>
-              </a>
+            <li class="search-input">
+              <input class="form-control" type="text" placeholder="Search..." />
             </li>
-            
+          </ul>
+          <ul class="nav-right">
+            <li class="notifications dropdown">
+              <span class="counter bgc-red">3</span>
+              <a href="" class="dropdown-toggle no-after" id="dropdownMenuLink" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <i class="ti-bell"></i>
+              </a>
+
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <div class="form-class">
+                  <form>
+                    <div class="form-group" id="name-id">
+                      <label for="name-id">Name</label>
+                      <input type="text" class="form-control" id="name-idd" aria-describedby="emailHelp"
+                        placeholder="Name" />
+                    </div>
+                    <div class="form-group" id="city-id">
+                      <label for="city-id">City</label>
+                      <input type="text" class="form-control" id="city-idd" placeholder="City" />
+                    </div>
+
+                    <button type="submit" class="btn btn-primary submitcity">
+                      Submit
+                    </button>
+                  </form>
+                </div>
+              </ul>
+            </li>
+            <li class="notifications dropdown">
+              <span class="counter bgc-blue">3</span>
+              <a href="" class="dropdown-toggle no-after" id="dropdownMenuLink" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                <i class="ti-email"></i>
+              </a>
+
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li class="pX-20 pY-15 bdB">
+                  <i class="ti-email pR-10"></i>
+                  <span class="fsz-sm fw-600 c-grey-900">Emails</span>
+                </li>
+                <li>
+                  <ul class="ovY-a pos-r scrollable lis-n p-0 m-0 fsz-sm">
+                    <li>
+                      <a href="" class="peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100">
+                        <div class="peer mR-15">
+                          <img class="w-3r bdrs-50p" src="https://randomuser.me/api/portraits/men/1.jpg" alt="" />
+                        </div>
+                        <div class="peer peer-greed">
+                          <div>
+                            <div class="peers jc-sb fxw-nw mB-5">
+                              <div class="peer">
+                                <p class="fw-500 mB-0">John Doe</p>
+                              </div>
+                              <div class="peer">
+                                <small class="fsz-xs">5 mins ago</small>
+                              </div>
+                            </div>
+                            <span class="c-grey-600 fsz-sm">
+                              Want to create your own customized data
+                              generator for your app...
+                            </span>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="" class="peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100">
+                        <div class="peer mR-15">
+                          <img class="w-3r bdrs-50p" src="https://randomuser.me/api/portraits/men/2.jpg" alt="" />
+                        </div>
+                        <div class="peer peer-greed">
+                          <div>
+                            <div class="peers jc-sb fxw-nw mB-5">
+                              <div class="peer">
+                                <p class="fw-500 mB-0">Moo Doe</p>
+                              </div>
+                              <div class="peer">
+                                <small class="fsz-xs">15 mins ago</small>
+                              </div>
+                            </div>
+                            <span class="c-grey-600 fsz-sm">
+                              Want to create your own customized data
+                              generator for your app...
+                            </span>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="" class="peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100">
+                        <div class="peer mR-15">
+                          <img class="w-3r bdrs-50p" src="https://randomuser.me/api/portraits/men/3.jpg" alt="" />
+                        </div>
+                        <div class="peer peer-greed">
+                          <div>
+                            <div class="peers jc-sb fxw-nw mB-5">
+                              <div class="peer">
+                                <p class="fw-500 mB-0">Lee Doe</p>
+                              </div>
+                              <div class="peer">
+                                <small class="fsz-xs">25 mins ago</small>
+                              </div>
+                            </div>
+                            <span class="c-grey-600 fsz-sm">
+                              Want to create your own customized data
+                              generator for your app...
+                            </span>
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="pX-20 pY-15 ta-c bdT">
+                  <span>
+                    <a href="email.html" class="c-grey-600 cH-blue fsz-sm td-n">View All Email
+                      <i class="fs-xs ti-angle-right mL-10"></i></a>
+                  </span>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="" class="dropdown-toggle no-after peers fxw-nw ai-c lh-1" id="dropdownMenuLink"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="peer mR-10">
+                  <img class="w-2r bdrs-50p" src="https://randomuser.me/api/portraits/men/10.jpg" alt="" />
+                </div>
+                <div class="peer">
+                  <span class="fsz-sm c-grey-900 get-name">John Doe</span>
+                </div>
+              </a>
+              <ul class="dropdown-menu fsz-sm" aria-labelledby="dropdownMenuLink">
+                <li>
+                  <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+                    <i class="ti-settings mR-10"></i>
+                    <span>Setting</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+                    <i class="ti-user mR-10"></i>
+                    <span>Profile</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="email.html" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+                    <i class="ti-email mR-10"></i>
+                    <span>Messages</span>
+                  </a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li>
+                  <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
+                    <i class="ti-power-off mR-10"></i>
+                    <span>Logout</span>
+                  </a>
+                </li>
               </ul>
             </li>
           </ul>
         </div>
       </div>
 
-      <!-- #Main ============================ -->
-      <div class="page-container">
-        <!-- ### $Topbar ### -->
-        <div class="header navbar">
-          <div class="header-container">
-            <ul class="nav-left">
-              <li>
-                <a
-                  id="sidebar-toggle"
-                  class="sidebar-toggle"
-                  href="javascript:void(0);"
-                >
-                  <i class="ti-menu"></i>
-                </a>
-              </li>
-              <li class="search-box">
-                <a
-                  class="search-toggle no-pdd-right"
-                  href="javascript:void(0);"
-                >
-                  <i class="search-icon ti-search pdd-right-10"></i>
-                  <i class="search-icon-close ti-close pdd-right-10"></i>
-                </a>
-              </li>
-              <li class="search-input">
-                <input
-                  class="form-control"
-                  type="text"
-                  placeholder="Search..."
-                />
-              </li>
-            </ul>
-            <ul class="nav-right">
-              <li class="notifications dropdown">
-                <span class="counter bgc-red">3</span>
-                <a
-                  href=""
-                  class="dropdown-toggle no-after"
-                  id="dropdownMenuLink"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <i class="ti-bell"></i>
-                </a>
-
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <div class="form-class">
-                    <form>
-                      <div class="form-group" id="name-id">
-                        <label for="name-id">Name</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="name-idd"
-                          aria-describedby="emailHelp"
-                          placeholder="Name"
-                        />
-                      </div>
-                      <div class="form-group" id="city-id">
-                        <label for="city-id">City</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="city-idd"
-                          placeholder="City"
-                        />
-                      </div>
-
-                      <button type="submit" class="btn btn-primary submitcity">
-                        Submit
-                      </button>
-                    </form>
+      <!-- ### $App Screen Content ### -->
+      <main class="main-content">
+        <div id="mainContent">
+          <div class="full-container bgc-grey-100">
+            <!-- Google Search -->
+            <div class="mansonary-item col-12 google-search p-20">
+              <div class="bd bgc-white">
+                <div class="peers fxw-nw@lg+ ai-s p-20">
+                  <div class="col-sm-12 col-md-6 search-image-container">
+                    <img src="https://picsum.photos/850/300" alt="" class="img-fluid" />
                   </div>
-                </ul>
-              </li>
-              <li class="notifications dropdown">
-                <span class="counter bgc-blue">3</span>
-                <a
-                  href=""
-                  class="dropdown-toggle no-after"
-                  id="dropdownMenuLink"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <i class="ti-email"></i>
-                </a>
-
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <li class="pX-20 pY-15 bdB">
-                    <i class="ti-email pR-10"></i>
-                    <span class="fsz-sm fw-600 c-grey-900">Emails</span>
-                  </li>
-                  <li>
-                    <ul class="ovY-a pos-r scrollable lis-n p-0 m-0 fsz-sm">
-                      <li>
-                        <a
-                          href=""
-                          class="peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100"
-                        >
-                          <div class="peer mR-15">
-                            <img
-                              class="w-3r bdrs-50p"
-                              src="https://randomuser.me/api/portraits/men/1.jpg"
-                              alt=""
-                            />
-                          </div>
-                          <div class="peer peer-greed">
-                            <div>
-                              <div class="peers jc-sb fxw-nw mB-5">
-                                <div class="peer">
-                                  <p class="fw-500 mB-0">John Doe</p>
-                                </div>
-                                <div class="peer">
-                                  <small class="fsz-xs">5 mins ago</small>
-                                </div>
-                              </div>
-                              <span class="c-grey-600 fsz-sm">
-                                Want to create your own customized data
-                                generator for your app...
-                              </span>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href=""
-                          class="peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100"
-                        >
-                          <div class="peer mR-15">
-                            <img
-                              class="w-3r bdrs-50p"
-                              src="https://randomuser.me/api/portraits/men/2.jpg"
-                              alt=""
-                            />
-                          </div>
-                          <div class="peer peer-greed">
-                            <div>
-                              <div class="peers jc-sb fxw-nw mB-5">
-                                <div class="peer">
-                                  <p class="fw-500 mB-0">Moo Doe</p>
-                                </div>
-                                <div class="peer">
-                                  <small class="fsz-xs">15 mins ago</small>
-                                </div>
-                              </div>
-                              <span class="c-grey-600 fsz-sm">
-                                Want to create your own customized data
-                                generator for your app...
-                              </span>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href=""
-                          class="peers fxw-nw td-n p-20 bdB c-grey-800 cH-blue bgcH-grey-100"
-                        >
-                          <div class="peer mR-15">
-                            <img
-                              class="w-3r bdrs-50p"
-                              src="https://randomuser.me/api/portraits/men/3.jpg"
-                              alt=""
-                            />
-                          </div>
-                          <div class="peer peer-greed">
-                            <div>
-                              <div class="peers jc-sb fxw-nw mB-5">
-                                <div class="peer">
-                                  <p class="fw-500 mB-0">Lee Doe</p>
-                                </div>
-                                <div class="peer">
-                                  <small class="fsz-xs">25 mins ago</small>
-                                </div>
-                              </div>
-                              <span class="c-grey-600 fsz-sm">
-                                Want to create your own customized data
-                                generator for your app...
-                              </span>
-                            </div>
-                          </div>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="pX-20 pY-15 ta-c bdT">
-                    <span>
-                      <a
-                        href="email.html"
-                        class="c-grey-600 cH-blue fsz-sm td-n"
-                        >View All Email
-                        <i class="fs-xs ti-angle-right mL-10"></i
-                      ></a>
-                    </span>
-                  </li>
-                </ul>
-              </li>
-              <li class="dropdown">
-                <a
-                  href=""
-                  class="dropdown-toggle no-after peers fxw-nw ai-c lh-1"
-                  id="dropdownMenuLink"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <div class="peer mR-10">
-                    <img
-                      class="w-2r bdrs-50p"
-                      src="https://randomuser.me/api/portraits/men/10.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div class="peer">
-                    <span class="fsz-sm c-grey-900">John Doe</span>
-                  </div>
-                </a>
-                <ul
-                  class="dropdown-menu fsz-sm"
-                  aria-labelledby="dropdownMenuLink"
-                >
-                  <li>
-                    <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
-                      <i class="ti-settings mR-10"></i>
-                      <span>Setting</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
-                      <i class="ti-user mR-10"></i>
-                      <span>Profile</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="email.html"
-                      class="d-b td-n pY-5 bgcH-grey-100 c-grey-700"
-                    >
-                      <i class="ti-email mR-10"></i>
-                      <span>Messages</span>
-                    </a>
-                  </li>
-                  <li role="separator" class="divider"></li>
-                  <li>
-                    <a href="" class="d-b td-n pY-5 bgcH-grey-100 c-grey-700">
-                      <i class="ti-power-off mR-10"></i>
-                      <span>Logout</span>
-                    </a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- ### $App Screen Content ### -->
-        <main class="main-content">
-          <div id="mainContent">
-            <div class="full-container bgc-grey-100">
-              <!-- Google Search -->
-              <div class="mansonary-item col-12 google-search p-20">
-                <div class="bd bgc-white">
-                  <div class="peers fxw-nw@lg+ ai-s p-20">
-                    <div class="col-sm-12 col-md-6 search-image-container">
-                      <img
-                        src="https://picsum.photos/850/300"
-                        alt=""
-                        class="img-fluid"
-                      />
-                    </div>
-                    <div
-                      class="col-sm-12 col-md-6 d-flex flex-column justify-content-center align-items-center"
-                    >
-                      <img
-                        src="https://cdn.webrazzi.com/uploads/2015/09/google-logo.png"
-                        class="google-logo"
-                        alt=""
-                      />
-                      <input
-                        type="text"
-                        class="form-control bdrs-10em m-1r"
-                        id="search-text"
-                      />
-                      <button
-                        type="button"
-                        class="btn btn-primary p-0 h-2r btn-color search-button"
-                        onclick="googleSearch()"
-                      >
-                        <i class="fa fa-search"></i>
-                      </button>
-                    </div>
+                  <div class="col-sm-12 col-md-6 d-flex flex-column justify-content-center align-items-center">
+                    <img src="https://cdn.webrazzi.com/uploads/2015/09/google-logo.png" class="google-logo" alt="" />
+                    <input type="text" class="form-control bdrs-10em m-1r" id="search-text" />
+                    <button type="button" class="btn btn-primary p-0 h-2r btn-color search-button"
+                      onclick="googleSearch()">
+                      <i class="fa fa-search"></i>
+                    </button>
                   </div>
                 </div>
               </div>
-              <!-- Google Search  END -->
-              <!-- News -->
+            </div>
+            <!-- Google Search  END -->
+            <!-- News -->
+            <div class="row align-items-start">
               <div class="masonry-item col-md-6 p-20">
                 <div class="bd bgc-white">
                   <div class="peers fxw-nw@lg+ ai-s">
@@ -473,12 +379,12 @@
                         <div class="layer w-100">
                           <div class="layers" id="news-container">
                             <!-- <div class="layer w-100 mt-15 single-news">
-                              <div class="news-img-container float-l mr-15">
-                                <img src="https://placehold.co/100" alt="" class="img-fluid">
-                              </div>
-                              <h5 class="mB-5">100k</h5>
-                              <small class="fw-600 c-grey-700">Visitors From USA</small>
-                            </div> -->
+                  <div class="news-img-container float-l mr-15">
+                    <img src="https://placehold.co/100" alt="" class="img-fluid">
+                  </div>
+                  <h5 class="mB-5">100k</h5>
+                  <small class="fw-600 c-grey-700">Visitors From USA</small>
+                </div> -->
                           </div>
                         </div>
                       </div>
@@ -486,182 +392,13 @@
                   </div>
                 </div>
               </div>
-              <!-- News END-->
-
-              <!-- Google Translate -->
-
-              <div class="translate-api">
-                <div class="translate-row">
-                  <div class="translate-column1">
-                    <img
-                      src="https://www.freepnglogos.com/uploads/translate-logo-png/google-translate-logo-emblem-symbol-services-application-12.png"
-                      class="google-logo2"
-                      alt=""
-                    />
-                  </div>
-
-                  <div class="a">
-                    <div class="translate-column2">
-                      <form>
-                        <div class="formfield">
-                          <textarea
-                            class="form-control"
-                            id="originalText"
-                            rows="10"
-                            cols="60"
-                          ></textarea>
-                        </div>
-                      </form>
-                      <div class="formfield">
-                        <textarea
-                          class="form-control"
-                          id="translatedText"
-                          rows="10"
-                          cols="60"
-                          readonly
-                          disabled
-                          placeholder="Translation"
-                        ></textarea>
-                        <div class="language-list">
-                          <select
-                            class="form-select"
-                            aria-label="Disabled select example"
-                          >
-                            <option selected value="en">English</option>
-                            <option value="af">Afrikaans</option>
-                            <option value="sq">Albanian</option>
-                            <option value="am">Amharic</option>
-                            <option value="ar">Arabic</option>
-                            <option value="an">Aragonese</option>
-                            <option value="hy">Armenian</option>
-                            <option value="ast">Asturian</option>
-                            <option value="az">Azerbaijani</option>
-                            <option value="eu">Basque</option>
-                            <option value="be">Belarusian</option>
-                            <option value="bn">Bengali</option>
-                            <option value="bs">Bosnian</option>
-                            <option value="br">Breton</option>
-                            <option value="bg">Bulgarian</option>
-                            <option value="ca">Catalan</option>
-                            <option value="zh">Chinese</option>
-                            <option value="co">Corsican</option>
-                            <option value="hr">Croatian</option>
-                            <option value="cs">Czech</option>
-                            <option value="da">Danish</option>
-                            <option value="nl">Dutch</option>
-                            <option value="eo">Esperanto</option>
-                            <option value="et">Estonian</option>
-                            <option value="fo">Faroese</option>
-                            <option value="fil">Filipino</option>
-                            <option value="fi">Finnish</option>
-                            <option value="fr">French</option>
-                            <option value="gl">Galician</option>
-                            <option value="ka">Georgian</option>
-                            <option value="de">German</option>
-                            <option value="el">Greek</option>
-                            <option value="gn">Guarani</option>
-                            <option value="gu">Gujarati</option>
-                            <option value="ha">Hausa</option>
-                            <option value="haw">Hawaiian</option>
-                            <option value="he">Hebrew</option>
-                            <option value="hi">Hindi</option>
-                            <option value="hu">Hungarian</option>
-                            <option value="is">Icelandic</option>
-                            <option value="id">Indonesian</option>
-                            <option value="ia">Interlingua</option>
-                            <option value="ga">Irish</option>
-                            <option value="it">Italian</option>
-                            <option value="ja">Japanese</option>
-                            <option value="kn">Kannada</option>
-                            <option value="kk">Kazakh</option>
-                            <option value="km">Khmer</option>
-                            <option value="ko">Korean</option>
-                            <option value="ku">Kurdish</option>
-                            <option value="ky">Kyrgyz</option>
-                            <option value="lo">Lao</option>
-                            <option value="la">Latin</option>
-                            <option value="lv">Latvian</option>
-                            <option value="ln">Lingala</option>
-                            <option value="lt">Lithuanian</option>
-                            <option value="mk">Macedonian</option>
-                            <option value="ms">Malay</option>
-                            <option value="ml">Malayalam</option>
-                            <option value="mt">Maltese</option>
-                            <option value="mr">Marathi</option>
-                            <option value="mn">Mongolian</option>
-                            <option value="ne">Nepali</option>
-                            <option value="no">Norwegian</option>
-                            <option value="oc">Occitan</option>
-                            <option value="or">Oriya</option>
-                            <option value="om">Oromo</option>
-                            <option value="ps">Pashto</option>
-                            <option value="fa">Persian</option>
-                            <option value="pl">Polish</option>
-                            <option value="pt">Portuguese</option>
-                            <option value="pa">Punjabi</option>
-                            <option value="qu">Quechua</option>
-                            <option value="ro">Romanian</option>
-                            <option value="rm">Romansh</option>
-                            <option value="ru">Russian</option>
-                            <option value="sr">Serbian</option>
-                            <option value="sh">Serbo</option>
-                            <option value="sn">Shona</option>
-                            <option value="sd">Sindhi</option>
-                            <option value="si">Sinhala</option>
-                            <option value="sk">Slovak</option>
-                            <option value="sl">Slovenian</option>
-                            <option value="so">Somali</option>
-                            <option value="es">Spanish</option>
-                            <option value="su">Sundanese</option>
-                            <option value="sw">Swahili</option>
-                            <option value="sv">Swedish</option>
-                            <option value="tg">Tajik</option>
-                            <option value="ta">Tamil</option>
-                            <option value="tt">Tatar</option>
-                            <option value="te">Telugu</option>
-                            <option value="th">Thai</option>
-                            <option value="ti">Tigrinya</option>
-                            <option value="to">Tongan</option>
-                            <option value="tr">Turkish</option>
-                            <option value="tk">Turkmen</option>
-                            <option value="tw">Twi</option>
-                            <option value="uk">Ukrainian</option>
-                            <option value="ur">Urdu</option>
-                            <option value="ug">Uyghur</option>
-                            <option value="uz">Uzbek</option>
-                            <option value="vi">Vietnamese</option>
-                            <option value="wa">Walloon</option>
-                            <option value="cy">Welsh</option>
-                            <option value="xh">Xhosa</option>
-                            <option value="yi">Yiddish</option>
-                            <option value="yo">Yoruba</option>
-                            <option value="zu">Zulu</option>
-                          </select>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="language-button">
-                      <button
-                        type="button"
-                        id="translate-button"
-                        class="btn cur-p btn-outline-secondary"
-                      >
-                        Translate
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
               <!-- Weather -->
-              <div class="weather-class">
+              <div class="masonry-item col-md-6 p-20 padding" style="padding-left: 0px !important;">
                 <div class="bd bgc-white p-20">
                   <div class="layers">
                     <!-- Widget Title -->
-                    <div class="layer w-100 mB-20">
-                      <h6 class="lh-1">
-                        <span class="weather-city">Weather</span>
-                      </h6>
+                    <div class="layer w-100">
+                      <h3 class="lh-1 weather-city">Weather</h3>
                     </div>
 
                     <!-- Today Weather -->
@@ -673,38 +410,26 @@
                             <div class="layer w-100">
                               <div class="peers fxw-nw ai-c">
                                 <div class="peer mR-20">
-                                  <h3>
-                                    <span class="weather-temp">32</span
-                                    ><sup>°C</sup>
-                                  </h3>
+                                  <h3><span class="weather-temp">32</span><sup>°C</sup></h3>
                                 </div>
-                                <div class="peer11"></div>
+                                <div class="peer11">
+                                </div>
                               </div>
                             </div>
 
                             <!-- Condition -->
                             <div class="layer w-100">
-                              <span class="fw-600 c-grey-600"
-                                ><span class="weather-status"
-                                  >Partly Clouds</span
-                                ></span
-                              >
+                              <span class="fw-600 c-grey-600"><span class="weather-status">Partly Clouds</span></span>
                             </div>
                           </div>
                         </div>
                         <div class="peer">
                           <div class="layers ai-fe">
                             <div class="layer">
-                              <h5 class="mB-5">
-                                <span class="weather-day">Monday</span>
-                              </h5>
+                              <h5 class="mB-5"><span class="weather-day">Monday</span></h5>
                             </div>
                             <div class="layer">
-                              <span class="fw-600 c-grey-600"
-                                ><span class="weather-date"
-                                  >Nov, 01 2017</span
-                                ></span
-                              >
+                              <span class="fw-600 c-grey-600"><span class="weather-date">Nov, 01 2017</span></span>
                             </div>
                           </div>
                         </div>
@@ -720,11 +445,7 @@
                               <span>Humidity</span>
                             </div>
                             <div class="peer ta-r">
-                              <span class="fw-600 c-grey-800"
-                                ><span class="weather-humidity"
-                                  >10km/h</span
-                                ></span
-                              >
+                              <span class="fw-600 c-grey-800"><span class="weather-humidity">10km/h</span></span>
                             </div>
                           </div>
                         </div>
@@ -734,10 +455,8 @@
                               <span>Night</span>
                             </div>
                             <div class="peer ta-r">
-                              <span class="fw-600 c-grey-800"
-                                ><span class="weather-night">05:00 AM</span
-                                ><sup>°C</sup></span
-                              >
+                              <span class="fw-600 c-grey-800"><span class="weather-night">05:00
+                                  AM</span><sup>°C</sup></span>
                             </div>
                           </div>
                         </div>
@@ -750,220 +469,354 @@
                         <div class="peer peer1">
                           <h6 class="mB-10">MON</h6>
 
-                          <span class="d-b fw-600"
-                            ><span class="weather-mon">32</span
-                            ><sup>°C</sup></span
-                          >
+                          <span class="d-b fw-600"><span class="weather-mon">32</span><sup>°C</sup></span>
                         </div>
                         <div class="peer peer2">
                           <h6 class="mB-10">TUE</h6>
 
-                          <span class="d-b fw-600"
-                            ><span class="weather-tue">32</span
-                            ><sup>°C</sup></span
-                          >
+                          <span class="d-b fw-600"><span class="weather-tue">32</span><sup>°C</sup></span>
                         </div>
                         <div class="peer peer3">
                           <h6 class="mB-10">WED</h6>
 
-                          <span class="d-b fw-600"
-                            ><span class="weather-wed">32</span
-                            ><sup>°C</sup></span
-                          >
+                          <span class="d-b fw-600"><span class="weather-wed">32</span><sup>°C</sup></span>
                         </div>
                         <div class="peer peer4">
                           <h6 class="mB-10">THR</h6>
 
-                          <span class="d-b fw-600"
-                            ><span class="weather-thr">32</span
-                            ><sup>°C</sup></span
-                          >
+                          <span class="d-b fw-600"><span class="weather-thr">32</span><sup>°C</sup></span>
                         </div>
                         <div class="peer peer5">
                           <h6 class="mB-10">FRI</h6>
 
-                          <span class="d-b fw-600"
-                            ><span class="weather-fri">32</span
-                            ><sup>°C</sup></span
-                          >
+                          <span class="d-b fw-600"><span class="weather-fri">32</span><sup>°C</sup></span>
                         </div>
                         <div class="peer peer6">
                           <h6 class="mB-10">SAT</h6>
 
-                          <span class="d-b fw-600"
-                            ><span class="weather-sat">32</span
-                            ><sup>°C</sup></span
-                          >
+                          <span class="d-b fw-600"><span class="weather-sat">32</span><sup>°C</sup></span>
                         </div>
                         <div class="peer peer7">
                           <h6 class="mB-10">SUN</h6>
 
-                          <span class="d-b fw-600"
-                            ><span class="weather-sun">32</span
-                            ><sup>°C</sup></span
-                          >
+                          <span class="d-b fw-600"><span class="weather-sun">32</span><sup>°C</sup></span>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Prayer Times -->
+                    <div class="layer w-100 prayer-times">
+                      <div class="peers peers-greed ai-fs ta-c">
+                        <div class="layer w-100 mB-20 prayer-container">
+                          <div class="layer w-100 mB-20 p-cnd">
+                            <h6 class="lh-1"><span class="prayer-city prayer-t">Prayer Times <span
+                                  style="font-weight: normal">for </span></span></h6>
+                            <span class="prayer-date"></span>
+                            <span>Next Prayer: <span class="prayer-countdown"></span></span>
+
+                          </div>
+
+                          <span class="p-hour"></span>
+
+                        </div>
+                        <div class="peer peer1">
+                          <img src="assets/images/imsak.svg" width="55" height="55">
+                          <h6 class="mB-10 prayer-t">İMSAK</h6>
+
+                          <span class="d-b fw-600 prayer-t"><span class="imsak"></span></span>
+                        </div>
+                        <div class="peer peer2">
+                          <img src="assets/images/sabah.svg" width="55" height="55">
+                          <h6 class="mB-10 prayer-t">SABAH</h6>
+
+                          <span class="d-b fw-600 prayer-t"><span class="sabah"></span></span>
+                        </div>
+                        <div class="peer peer3">
+                          <img src="assets/images/ögle.svg" width="55" height="55">
+                          <h6 class="mB-10 prayer-t">ÖĞLE</h6>
+
+                          <span class="d-b fw-600 prayer-t"><span class="ogle"></span></span>
+                        </div>
+                        <div class="peer peer4">
+                          <img src="assets/images/ikindi.svg" width="55" height="55">
+                          <h6 class="mB-10 prayer-t">İKİNDİ</h6>
+
+                          <span class="d-b fw-600 prayer-t"><span class="ikindi"></span></span>
+                        </div>
+                        <div class="peer peer5">
+                          <img src="assets/images/aksam.svg" width="55" height="55">
+                          <h6 class="mB-10 prayer-t">AKŞAM</h6>
+
+                          <span class="d-b fw-600 prayer-t"><span class="aksam"></span></span>
+                        </div>
+                        <div class="peer peer7">
+                          <img src="assets/images/yatsi.svg" width="55" height="55">
+                          <h6 class="mB-10 prayer-t">YATSI</h6>
+
+                          <span class="d-b fw-600 prayer-t"><span class="yatsi"></span></span>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- eczane -->
+                <div class="nöec">
+                  <div class="logo" style="max-width: 18rem" onclick="disa()">
+                    <img class="ezlogo" src="images/no.jpg" alt="" />
+                  </div>
+                  <div class="spinner-border text-danger" role="status" id="spinner-nö" style="display: none;">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                  <div class="card text-white bg-danger mb-3" style="max-width: 18rem" id="eczaneList">
+                    <div class="card-header">Nöbetçi Eczane</div>
+                    <div class="card-body" id="nöecz"></div>
+                  </div>
+                </div>
+                <!-- eczane END -->
+              </div>
+            </div>
+            <!-- News END-->
+            <div class="row align-items-start">
+              <!-- Google Translate -->
+              <div class="masonry-item col-md-6 p-20">
+                <div class="bd bgc-white">
+                  <div class="peers fxw-nw@lg+ ai-s">
+                    <div class="peer bdL p-20 w-100">
+                      <div class="layers">
+                        <div class="translate-api">
+                          <div class="translate-row">
+                            <div class="translate-column1">
+                              <img
+                                src="https://www.freepnglogos.com/uploads/translate-logo-png/google-translate-logo-emblem-symbol-services-application-12.png"
+                                class="google-logo2" alt="">
+
+                            </div>
+
+                            <div class="a">
+                              <div class="translate-column2">
+                                <form>
+                                  <div class="formfield">
+
+                                    <textarea class="form-control" id="originalText" rows="10" cols="60"
+                                      style="resize:none"></textarea>
+                                  </div>
+                                </form>
+                                <div class="formfield">
+
+                                  <textarea class="form-control" id="translatedText" rows="10" cols="60"
+                                    style="resize:none" readonly disabled placeholder="Translation"></textarea>
+                                  <div class="language-list">
+                                    <select class="form-select" aria-label="Disabled select example">
+                                      <option selected value="en">English</option>
+                                      <option value="af">Afrikaans</option>
+                                      <option value="sq">Albanian</option>
+                                      <option value="am">Amharic</option>
+                                      <option value="ar">Arabic</option>
+                                      <option value="an">Aragonese</option>
+                                      <option value="hy">Armenian</option>
+                                      <option value="ast">Asturian</option>
+                                      <option value="az">Azerbaijani</option>
+                                      <option value="eu">Basque</option>
+                                      <option value="be">Belarusian</option>
+                                      <option value="bn">Bengali</option>
+                                      <option value="bs">Bosnian</option>
+                                      <option value="br">Breton</option>
+                                      <option value="bg">Bulgarian</option>
+                                      <option value="ca">Catalan</option>
+                                      <option value="zh">Chinese</option>
+                                      <option value="co">Corsican</option>
+                                      <option value="hr">Croatian</option>
+                                      <option value="cs">Czech</option>
+                                      <option value="da">Danish</option>
+                                      <option value="nl">Dutch</option>
+                                      <option value="eo">Esperanto</option>
+                                      <option value="et">Estonian</option>
+                                      <option value="fo">Faroese</option>
+                                      <option value="fil">Filipino</option>
+                                      <option value="fi">Finnish</option>
+                                      <option value="fr">French</option>
+                                      <option value="gl">Galician</option>
+                                      <option value="ka">Georgian</option>
+                                      <option value="de">German</option>
+                                      <option value="el">Greek</option>
+                                      <option value="gn">Guarani</option>
+                                      <option value="gu">Gujarati</option>
+                                      <option value="ha">Hausa</option>
+                                      <option value="haw">Hawaiian</option>
+                                      <option value="he">Hebrew</option>
+                                      <option value="hi">Hindi</option>
+                                      <option value="hu">Hungarian</option>
+                                      <option value="is">Icelandic</option>
+                                      <option value="id">Indonesian</option>
+                                      <option value="ia">Interlingua</option>
+                                      <option value="ga">Irish</option>
+                                      <option value="it">Italian</option>
+                                      <option value="ja">Japanese</option>
+                                      <option value="kn">Kannada</option>
+                                      <option value="kk">Kazakh</option>
+                                      <option value="km">Khmer</option>
+                                      <option value="ko">Korean</option>
+                                      <option value="ku">Kurdish</option>
+                                      <option value="ky">Kyrgyz</option>
+                                      <option value="lo">Lao</option>
+                                      <option value="la">Latin</option>
+                                      <option value="lv">Latvian</option>
+                                      <option value="ln">Lingala</option>
+                                      <option value="lt">Lithuanian</option>
+                                      <option value="mk">Macedonian</option>
+                                      <option value="ms">Malay</option>
+                                      <option value="ml">Malayalam</option>
+                                      <option value="mt">Maltese</option>
+                                      <option value="mr">Marathi</option>
+                                      <option value="mn">Mongolian</option>
+                                      <option value="ne">Nepali</option>
+                                      <option value="no">Norwegian</option>
+                                      <option value="oc">Occitan</option>
+                                      <option value="or">Oriya</option>
+                                      <option value="om">Oromo</option>
+                                      <option value="ps">Pashto</option>
+                                      <option value="fa">Persian</option>
+                                      <option value="pl">Polish</option>
+                                      <option value="pt">Portuguese</option>
+                                      <option value="pa">Punjabi</option>
+                                      <option value="qu">Quechua</option>
+                                      <option value="ro">Romanian</option>
+                                      <option value="rm">Romansh</option>
+                                      <option value="ru">Russian</option>
+                                      <option value="sr">Serbian</option>
+                                      <option value="sh">Serbo</option>
+                                      <option value="sn">Shona</option>
+                                      <option value="sd">Sindhi</option>
+                                      <option value="si">Sinhala</option>
+                                      <option value="sk">Slovak</option>
+                                      <option value="sl">Slovenian</option>
+                                      <option value="so">Somali</option>
+                                      <option value="es">Spanish</option>
+                                      <option value="su">Sundanese</option>
+                                      <option value="sw">Swahili</option>
+                                      <option value="sv">Swedish</option>
+                                      <option value="tg">Tajik</option>
+                                      <option value="ta">Tamil</option>
+                                      <option value="tt">Tatar</option>
+                                      <option value="te">Telugu</option>
+                                      <option value="th">Thai</option>
+                                      <option value="ti">Tigrinya</option>
+                                      <option value="to">Tongan</option>
+                                      <option value="tr">Turkish</option>
+                                      <option value="tk">Turkmen</option>
+                                      <option value="tw">Twi</option>
+                                      <option value="uk">Ukrainian</option>
+                                      <option value="ur">Urdu</option>
+                                      <option value="ug">Uyghur</option>
+                                      <option value="uz">Uzbek</option>
+                                      <option value="vi">Vietnamese</option>
+                                      <option value="wa">Walloon</option>
+                                      <option value="cy">Welsh</option>
+                                      <option value="xh">Xhosa</option>
+                                      <option value="yi">Yiddish</option>
+                                      <option value="yo">Yoruba</option>
+                                      <option value="zu">Zulu</option>
+                                    </select>
+                                  </div>
+
+                                </div>
+
+                              </div>
+                              <div class="language-button">
+                                <button type="button" id="translate-button"
+                                  class="btn cur-p btn-outline-secondary">Translate</button>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <!-- Prayer Times -->
-              <div class="prayer-times">
-                <div class="layer w-100">
-                  <div class="peers peers-greed ai-fs ta-c">
-                    <div class="layer w-100 mB-20 prayer-container">
-                      <div class="layer w-100 mB-20 p-cnd">
-                        <h6 class="lh-1">
-                          <span class="prayer-city prayer-t"></span>
-                        </h6>
-                        <span class="prayer-date"></span>
-                        <span
-                          >Sonraki namaz: <span class="prayer-countdown"></span
-                        ></span>
-                      </div>
-
-                      <span class="p-hour"></span>
-                    </div>
-                    <div class="peer peer1">
-                      <img
-                        src="assets/images/imsak.svg"
-                        width="55"
-                        height="55"
-                      />
-                      <h6 class="mB-10 prayer-t">İMSAK</h6>
-
-                      <span class="d-b fw-600 prayer-t"
-                        ><span class="imsak"></span
-                      ></span>
-                    </div>
-                    <div class="peer peer2">
-                      <img
-                        src="assets/images/sabah.svg"
-                        width="55"
-                        height="55"
-                      />
-                      <h6 class="mB-10 prayer-t">SABAH</h6>
-
-                      <span class="d-b fw-600 prayer-t"
-                        ><span class="sabah"></span
-                      ></span>
-                    </div>
-                    <div class="peer peer3">
-                      <img
-                        src="assets/images/ögle.svg"
-                        width="55"
-                        height="55"
-                      />
-                      <h6 class="mB-10 prayer-t">ÖĞLE</h6>
-
-                      <span class="d-b fw-600 prayer-t"
-                        ><span class="ogle"></span
-                      ></span>
-                    </div>
-                    <div class="peer peer4">
-                      <img
-                        src="assets/images/ikindi.svg"
-                        width="55"
-                        height="55"
-                      />
-                      <h6 class="mB-10 prayer-t">İKİNDİ</h6>
-
-                      <span class="d-b fw-600 prayer-t"
-                        ><span class="ikindi"></span
-                      ></span>
-                    </div>
-                    <div class="peer peer5">
-                      <img
-                        src="assets/images/aksam.svg"
-                        width="55"
-                        height="55"
-                      />
-                      <h6 class="mB-10 prayer-t">AKŞAM</h6>
-
-                      <span class="d-b fw-600 prayer-t"
-                        ><span class="aksam"></span
-                      ></span>
-                    </div>
-                    <div class="peer peer7">
-                      <img
-                        src="assets/images/yatsi.svg"
-                        width="55"
-                        height="55"
-                      />
-                      <h6 class="mB-10 prayer-t">YATSI</h6>
-
-                      <span class="d-b fw-600 prayer-t"
-                        ><span class="yatsi"></span
-                      ></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- IMDB -->
-              <div class="imdb-container">
-                <div id="imdb-search-id">
-                  <input
-                    type="text"
-                    class="form-control imdb-search"
-                    placeholder="Movie or TV-Series"
-                    required=""
-                  />
-                  <button
-                    type="button"
-                    class="btn cur-p btn-warning imdb-search-button"
-                  >
-                    Search
-                  </button>
-                </div>
-                <div class="imdb-list"></div>
-              </div>
               <!-- Currency -->
-            <div class="row">
+
               <div class="mansonary-item col-6 p-20">
-              <div class="wrapper ">
-                <header>Currency Converter</header>
-                <form action="#" class="currency_form">
-                  <div class="amount">
-                    <p>Enter Amount</p>
-                    <input type="text" value="1" />
-                  </div>
-                  <div class="drop-list">
-                    <div class="from">
-                      <p>From</p>
-                      <div class="select-box">
-                        <img
-                          src="https://flagcdn.com/48x36/us.png"
-                          alt="flag"
-                        />
-                        <select></select>
+                <div class="wrapper ">
+                  <header>Currency Converter</header>
+                  <form action="#" class="currency_form">
+                    <div class="amount">
+                      <p>Enter Amount</p>
+                      <input type="text" value="1" />
+                    </div>
+                    <div class="drop-list">
+                      <div class="from">
+                        <p>From</p>
+                        <div class="select-box">
+                          <img src="https://flagcdn.com/48x36/us.png" alt="flag" />
+                          <select></select>
+                        </div>
+                      </div>
+                      <div class="icon"><i class="fas fa-exchange-alt"></i></div>
+                      <div class="to">
+                        <p>To</p>
+                        <div class="select-box">
+                          <img src="https://flagcdn.com/48x36/np.png" alt="flag" />
+                          <select></select>
+                        </div>
                       </div>
                     </div>
-                    <div class="icon"><i class="fas fa-exchange-alt"></i></div>
-                    <div class="to">
-                      <p>To</p>
-                      <div class="select-box">
-                        <img
-                          src="https://flagcdn.com/48x36/np.png"
-                          alt="flag"
-                        />
-                        <select></select>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="exchange-rate">Getting exchange rate...</div>
-                  <button class="curencyBtn">Get Exchange Rate</button>
-                </form>
+                    <div class="exchange-rate">Getting exchange rate...</div>
+                    <button class="curencyBtn">Get Exchange Rate</button>
+                  </form>
+                </div>
               </div>
             </div>
-          </div>
-              <!-- Currency End -->
-            </div>
-          </div>
-        </main>
+            <!-- Currency End -->
 
-        <!-- ### $App Screen Footer ### -->
-        <!-- <footer class="bdT ta-c p-30 lh-0 fsz-sm c-grey-600">
+
+
+
+
+            <!-- IMDB -->
+            <div class="masonry-item col-md-6 p-20">
+              <div class="bd bgc-white">
+                <div class="peers fxw-nw@lg+ ai-s">
+                  <div class="peer bdL p-20 w-100">
+
+                    <div class="imdb-container">
+                      <div id="imdb-search-id">
+                        <input type="text" class="form-control imdb-search" placeholder="Movie or TV-Series"
+                          required="">
+                        <button type="button" class="btn cur-p btn-warning imdb-search-button">Search</button>
+                      </div>
+                      <h5 style="text-align: center; margin-top: 30px;">Movie of the Day</h5>
+                      <div class="card imdb-card">
+                        <img class="card-img-top imdbID-img" style="width: 240px; max-height: 350px;"
+                          src="https://m.media-amazon.com/images/M/MV5BMTc5NzQzNjk2NF5BMl5BanBnXkFtZTgwODU0MjI5NjE@._V1_.jpg"
+                          alt="Card image cap">
+                        <div class="card-body">
+                          <h6 class="card-title imdbID-title "><strong>Victoria</strong></h6>
+                          <p class="card-text imdbID-text">A young Spanish woman who has recently moved to Berlin finds
+                            her flirtation with a local guy turn potentially deadly as their night out with his friends
+                            reveals a dangerous secret.</p>
+                          <ul class="list-group list-group-flush">
+                            <li class="list-group-item imdbID-Director" style="color: #72777a;">Director: Sebastian
+                              Schipper</li>
+                            <li class="list-group-item imdbID-Genre" style="color: #72777a;">Genre: Crime, Drama,
+                              Romance</li>
+                            <li class="list-group-item imdbID-Runtime" style="color: #72777a;">Runtime: 138 min</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="imdb-list">
+
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+      </main>
+
+      <!-- ### $App Screen Footer ### -->
+      <!-- <footer class="bdT ta-c p-30 lh-0 fsz-sm c-grey-600">
           <span
             >Copyright © 2021 Designed by
             <a href="https://colorlib.com" target="_blank" title="Colorlib"
@@ -971,8 +824,9 @@
             >. All rights reserved.</span
           >
         </footer> -->
-      </div>
     </div>
-  </body>
-  <script src="assets/scripts/main.js"></script>
+  </div>
+</body>
+<script src="assets/scripts/main.js"></script>
+
 </html>
