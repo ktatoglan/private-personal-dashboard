@@ -385,3 +385,35 @@ form button {
 form button:hover {
   background: #4534fe;
 }
+/* borsa */
+.green {
+  background-color: green !important;
+  color: white !important;
+  font-weight: bolder;
+}
+.red {
+  background-color: red !important;
+  color: white !important;
+  font-weight: bolder;
+}
+/* clock */
+.clock span {
+  font-size: 30px;
+  width: 50px;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+}
+.clock {
+  align-items: center;
+  justify-content: center;
+  margin-top: 7px;
+}
+
+.clock span::after {
+  font-size: 10px;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translate(-50%);
+}
