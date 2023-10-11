@@ -6,6 +6,10 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Blank</title>
     <style>
@@ -145,9 +149,14 @@
             <li class="nav-item">
               <a class="sidebar-link" href="compose.html">
                 <span class="icon-holder">
-                  <i class="c-blue-500 ti-share"></i>
+                  <img
+                    class="icon-jobs"
+                    style="width: 17px; height: 16px"
+                    src="images/project-manager.svg"
+                    alt=""
+                  />
                 </span>
-                <span class="title">Compose</span>
+                <span class="title">JOB LİST</span>
               </a>
             </li>
             <li class="nav-item">
@@ -329,6 +338,15 @@
               </li>
             </ul>
             <ul class="nav-right">
+              <li>
+                <div class="clock">
+                  <span id="hrs">00</span>
+                  <span>:</span>
+                  <span id="min">00</span>
+                  <span>:</span>
+                  <span id="sec">00</span>
+                </div>
+              </li>
               <li class="notifications dropdown">
                 <span class="counter bgc-red">3</span>
                 <a
@@ -607,7 +625,7 @@
 
                <!-- Google Translate -->
               
-               <div class="translate-api">
+              <div class="translate-api">
                 <div class="translate-row">
                   <div class="translate-column1">
                     <img src="https://www.freepnglogos.com/uploads/translate-logo-png/google-translate-logo-emblem-symbol-services-application-12.png" class="google-logo2" alt="">
@@ -862,7 +880,7 @@
                 </div>
               </div>
               <!-- Prayer Times -->
-            <div class="prayer-times">
+              <div class="prayer-times">
               <div class="layer w-100">
                 <div class="peers peers-greed ai-fs ta-c">
                   <div class="layer w-100 mB-20 prayer-container">
@@ -915,9 +933,9 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <!-- IMDB -->
-            <div class="imdb-container">
+              </div>
+              <!-- IMDB -->
+              <div class="imdb-container">
               <div id="imdb-search-id">
                 <input type="text" class="form-control imdb-search" placeholder="Movie or TV-Series" required="">
                 <button type="button" class="btn cur-p btn-warning imdb-search-button">Search</button>
@@ -925,7 +943,60 @@
               <div class="imdb-list">
                 
               </div>
-            </div>
+              </div>
+               <!-- currency -->
+              <div class="wrapper">
+              <header>Currency Converter</header>
+              <form action="#" class="currency_form">
+                <div class="amount">
+                  <p>Enter Amount</p>
+                  <input type="text" value="1" />
+                </div>
+                <div class="drop-list">
+                  <div class="from">
+                    <p>From</p>
+                    <div class="select-box">
+                      <img src="https://flagcdn.com/48x36/us.png" alt="flag" />
+                      <select>
+                     
+                      </select>
+                    </div>
+                  </div>
+                  <div class="icon"><i class="fas fa-exchange-alt"></i></div>
+                  <div class="to">
+                    <p>To</p>
+                    <div class="select-box">
+                      <img src="https://flagcdn.com/48x36/np.png" alt="flag" />
+                      <select>
+                      
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="exchange-rate">Getting exchange rate...</div>
+                <button class="curencyBtn">Get Exchange Rate</button>
+              </form>
+              </div>
+              <!-- currency end -->
+              <!-- eczane -->
+             
+              <div class="nöec">
+              <div class="logo" style="max-width: 18rem" onclick="disa()">
+                <img class="ezlogo" src="images/nö.jpg" alt="" />
+              </div>
+              <div class="spinner-border text-danger" role="status" id="spinner-nö" style="display: none;">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <div
+                class="card text-white bg-danger mb-3"
+                style="max-width: 18rem"
+                id="eczaneList"
+              >
+                <div class="card-header">Nöbetçi Eczane</div>
+                <div class="card-body" id="nöecz"></div>
+              </div>
+              </div>
+              <!-- eczane END -->
             </div>
           </div>
         </main>
