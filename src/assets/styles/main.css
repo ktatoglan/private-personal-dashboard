@@ -98,6 +98,14 @@
 }
 
 @media (max-width:768px) {
+
+  .imdb-card {
+    flex-direction: column;
+  }
+  .padding-weather {
+    padding-left: 20px !important;
+  }
+  
   .weather-class {
       width: 100%;
   }
@@ -118,13 +126,15 @@
       width: 100% !important;
   }
   .nav-right {
-    width: 84%;
+    width: 83%;
   }
   .nav-right .dropdown:last-of-type{
     display: none;
   }
 }
-
+.padding-weather {
+  padding-left: 0px !important;
+}
 
 .p-hour {
   font-size: 22px;
@@ -166,6 +176,10 @@
   
 }
 
+.b0 {
+  border: 0 !important;
+}
+
 .imdb-div2-li > strong {
   font-size: 16px;
 }
@@ -189,10 +203,8 @@
   gap: 10px;
   justify-content: center;
 }
-
 .imdb-card {
-  flex-direction: row !important;
-  display: flex !important;
+  display: flex;
   margin-left: auto;
   margin-right: auto;
   margin-top: 10px;

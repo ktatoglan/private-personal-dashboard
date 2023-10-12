@@ -420,7 +420,6 @@ xhr.addEventListener("readystatechange", function () {
       prayerTimes.push(hourMinute)
     }
 
-
     function prayerTime(prayerTimes) {
       for (let i = 0; i < prayerTimes.length; i++) {
         if (hours < prayerTimes[i].hour || (hours === prayerTimes[i].hour && minutes < prayerTimes[i].minute)) {
@@ -432,7 +431,20 @@ xhr.addEventListener("readystatechange", function () {
             remainingMinutes += 60;
             remainingHours--;
           }
-    
+          
+          if(prayerTimes[i].vakit === "İmsak") {
+            prayerTimes[i].vakit = "FAJR"
+          } else if (prayerTimes[i].vakit === "Güneş") {
+            prayerTimes[i].vakit = "SUNRISE"
+          } else if (prayerTimes[i].vakit === "öğle") {
+            prayerTimes[i].vakit = "DHUHR"
+          } else if (prayerTimes[i].vakit === "İkindi") {
+            prayerTimes[i].vakit = "ASR"
+          } else if (prayerTimes[i].vakit === "Akşam") {
+            prayerTimes[i].vakit = "MAGHRIB"
+          } else if (prayerTimes[i].vakit === "Yatsı") {
+            prayerTimes[i].vakit = "ISHA"
+          }
           prayerCountdown.innerHTML = `${remainingHours == 0 ? "in" : `in ${remainingHours} hours and`} ${remainingMinutes} minutes ${prayerTimes[i].vakit.toUpperCase()}`;
           
           return;
