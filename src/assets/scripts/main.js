@@ -536,7 +536,7 @@ xhr.addEventListener("readystatechange", function () {
 
       newXHR.open("GET", `https://api.collectapi.com/imdb/imdbSearchByName?query=${imdb_search}`);
       newXHR.setRequestHeader("content-type", "application/json");
-      newXHR.setRequestHeader("authorization", `${keys.colletcapi_key_m}`);
+      newXHR.setRequestHeader("authorization", `${keys.colletcapi_key_a}`);
       newXHR.send(data);
     });
     
@@ -545,7 +545,7 @@ xhr.addEventListener("readystatechange", function () {
 
 xhr.open("GET", "https://api.collectapi.com/imdb/imdbSearchByName?query=");
 xhr.setRequestHeader("content-type", "application/json");
-xhr.setRequestHeader("authorization", `${keys.colletcapi_key_m}`);
+xhr.setRequestHeader("authorization", `${keys.colletcapi_key_a}`);
 xhr.send(data);
 
 var data = null;
@@ -585,7 +585,7 @@ function falseReturn() {
   let randomIMDB = "tt" + random7DigitNumber
   xhr.open("GET", `https://api.collectapi.com/imdb/imdbSearchById?movieId=${randomIMDB}`);
   xhr.setRequestHeader("content-type", "application/json");
-  xhr.setRequestHeader("authorization", `${keys.colletcapi_key_m}`);
+  xhr.setRequestHeader("authorization", `${keys.colletcapi_key_a}`);
   xhr.send(data)
   
   
